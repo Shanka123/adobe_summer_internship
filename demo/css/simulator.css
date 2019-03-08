@@ -1,0 +1,214 @@
+.policy{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	top: 70px;
+	font-size: 35px;
+}
+.policy_select{
+	position: absolute;
+	height: 200px;
+	width: 100px;
+	left: 120px;
+	top: 7px;
+	font-size: 30px;
+}
+.start{
+	position: absolute;
+	height: 150px;
+	width: 150px;
+	top: 150px;
+	left: 135px;
+
+}
+.stop{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	top: 150px;
+	left: 215px;
+}
+.resume{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	top: 150px;
+	left: 295px;
+}
+.scheduler{
+	position: absolute;
+	height: 450px;
+	width: 450px;
+	top: 200px;
+    left: 775px;
+}
+
+#scheduler_area{
+	position: absolute;
+	top: 370px;
+	left: 940px;
+	background: grey;
+	border-radius: 50%;
+	width: 110px;
+	height: 110px;
+}
+#cluster_bar {
+	position: absolute;
+    width : 250px;
+    height : 250px;
+    top: 100px;
+	/*top: 180px;
+	left: 500px;*/
+    font-size : 8px;
+}
+.machine{
+	position: absolute;
+	border: 3px solid black;
+	height: 130px;
+	width: 200px;
+	top: 50px;
+}
+.machine_name{
+	position: absolute;
+	width:1px;
+	word-wrap: break-word;
+	font-family: monospace;
+	font-size: 50px;
+}
+.new_task{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: black;
+	border: 2px black solid; 
+}
+.cluster{
+	position: absolute;
+	top: 130px;
+	left: 600px;
+	width: 25%;
+	height: 25%;
+}
+.clutering_border{
+	position: absolute;
+	top: 340px;
+	left: 470px;
+	width : 250px;
+    height : 370px;
+	border: 2px dashed #000021;
+	border-radius: 25px;
+}
+.cluster_name{
+	position: absolute;
+	top: 370px;
+	left: 70px;
+	font-size: 25px;
+}
+.stkidxs{
+	position: absolute;
+	width: 100%;
+	background-color: yellow;
+}
+.cclibraries{			
+	position: absolute;
+	width: 100%;
+	background-color: red;
+}
+.activity{
+	position: absolute;
+	width: 100%;
+	background-color: green;
+}
+.lridxsvc{
+	position: absolute;
+	width: 100%;
+	background-color: blue;
+}
+.enterorgser{
+	position: absolute;
+	width: 100%;
+	background-color: #8B008B;
+}
+.clock {
+    position: absolute;
+    border: 2px solid #73AD21;
+    border-radius: 25px;
+    top: 8%;
+    left: 50%;
+    width: 8%;
+    height: 7%;
+    transform: translateX(-50%) translateY(-50%);
+    color: grey;
+    font-size: 40px;
+    font-family: Orbitron;
+    letter-spacing: 5px;
+}
+/*border-radius: 25px;border: 2px solid #73AD21;margin-left: 20%;width: 200px;text-align: center;*/
+.right_area{
+	width: 100%;
+	height: 100%;
+}
+.tool_name{
+	position: absolute;
+	left: 0px;
+	background: grey;
+	width: 450px;
+	height: 50px;
+}
+#machine1_util {
+	position: absolute;
+	left: 1350px;
+	top: 40px;
+    width : 480px;
+    height : 200px;
+    font-size : 10px;
+}
+#machine2_util {
+	position: absolute;
+	left: 1350px;
+	top: 230px;
+    width : 480px;
+    height : 200px;
+    font-size : 10px;
+}
+#machine3_util {
+	position: absolute;
+	left: 1350px;
+	top: 420px;
+    width : 480px;
+    height : 200px;
+    font-size : 10px;
+}
+#machine4_util {
+	position: absolute;
+	left: 1350px;
+	top: 610px;
+    width : 480px;
+    height : 200px;
+    font-size : 10px;
+}
+#machine5_util {
+	position: absolute;
+	left: 1350px;
+	top: 800px;
+    width : 480px;
+    height : 200px;
+    font-size : 10px;
+}
+#task_util{
+	position: absolute;
+	left: 750px;
+	top: 780px;
+    width : 480px;
+    height : 200px;
+    font-size : 10px;
+}
+.job_generator{
+	position: absolute;
+	top: 130px;
+	left: 560px;
+	border: 2px dashed black;
+	border-radius: 10px;
+	width: 70px;
+	height: 70px;
+}

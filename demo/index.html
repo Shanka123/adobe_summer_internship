@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/probar.css">
+	<link rel="stylesheet" type="text/css" href="css/simulator.css">
+	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+	<script src="https://www.amcharts.com/lib/3/gauge.js"></script>
+	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+	<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+	<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.4/css/dx.spa.css" />
+   <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.4/css/dx.common.css" />
+   <link rel="dx-theme" data-theme="generic.light" href="https://cdn3.devexpress.com/jslib/18.1.4/css/dx.light.css" />
+   <script src="https://cdn3.devexpress.com/jslib/18.1.4/js/dx.all.js"></script>
+	<script src="chart.js"></script>
+	<script src="js_load.js"></script>
+	<script src="main.js" "></script>
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row content">
+		<div class="right_area">
+			<div class="job_generator"></div>
+			<div style="position: absolute;top: 95px;left: 530px;width: 200px;height: 50px;font-size: 25px;">Jobs Arrival</div>
+			<div>
+				<div style="position: absolute;top: 10px; left: 890px;font-size: 25px;">Time</div>
+				<div class="clock well"><p id="clock" style="text-align: center; margin-top: -12px;">0000</p></div>
+			</div>
+			<div id="scheduler_area">
+			  <p style="font-size: 50px; text-align: center; margin-top: 20%;" id="action_value"></p>
+			</div>
+			<p style="position: absolute; top: 610px; left: 940px;font-size: 25px; text-align: center;">Scheduler</p>
+			<div id="task_util"></div>
+			<div id="machines"></div>
+			<div style="position: absolute; left: 1238px; top: 10px;font-size: 20px;">Current State</div>
+			<div style="position: absolute; left: 1460px; top: 10px;font-size: 20px;"><b>Machines Utilization History</b></div>
+			<div id="machine1_util"></div>
+			<div id="machine2_util"></div>
+			<div id="machine3_util"></div>
+			<div id="machine4_util"></div>
+			<div id="machine5_util"></div>
+			<div id="machine1_util_show" style="position: absolute; top:70px;left:1590px;font-size: 40px;opacity: 0.7;"></div>
+			<div id="machine2_util_show" style="position: absolute; top:260px;left:1590px;font-size: 40px;opacity: 0.7;"></div>
+			<div id="machine3_util_show" style="position: absolute; top:450px;left:1590px;font-size: 40px;opacity: 0.7;"></div>
+			<div id="machine4_util_show" style="position: absolute; top:640px;left:1590px;font-size: 40px;opacity: 0.7;"></div>
+			<div id="machine5_util_show" style="position: absolute; top:830px;left:1590px;font-size: 40px;opacity: 0.7;"></div>
+			<!-- <div class="classifier">
+				<div class="cluster" id="cluster0" style="top: 0%; left: 0%;background-color: yellow"></div>
+				<div class="cluster" id="cluster1" style="top: 25%; left: 0%;background-color: red"></div>
+				<div class="cluster" id="cluster2" style="top: 50%; left: 0%;background-color: green"></div>
+				<div class="cluster" id="cluster3" style="top: 75%; left: 0%;background-color: blue"></div>
+			</div> -->
+			<div class="clutering_border">
+				<div id="cluster_bar"></div>
+				<div class="cluster_name">Classifier</div>
+			</div>
+			<div id="5_machine_numbers">
+				<div style="position: absolute;top: 253px;left: 975px;width: 200px;height: 40px;font-size: 18px">1</div>
+				<div style="position: absolute;top: 273px;left: 975px;width: 200px;height: 40px;font-size: 18px">2</div>
+				<div style="position: absolute;top: 295px;left: 975px;width: 200px;height: 40px;font-size: 18px">3</div>
+				<div style="position: absolute;top: 315px;left: 975px;width: 200px;height: 40px;font-size: 18px">4</div>
+				<div style="position: absolute;top: 339px;left: 975px;width: 200px;height: 40px;font-size: 18px">5</div>
+			</div>
+			<div id="4_machine_numbers">
+				<div style="position: absolute;top: 253px;left: 975px;width: 200px;height: 40px;font-size: 18px">1</div>
+				<div style="position: absolute;top: 279px;left: 975px;width: 200px;height: 40px;font-size: 18px">2</div>
+				<div style="position: absolute;top: 305px;left: 975px;width: 200px;height: 40px;font-size: 18px">3</div>
+				<div style="position: absolute;top: 331px;left: 975px;width: 200px;height: 40px;font-size: 18px">4</div>
+			</div>
+			<!-- <div style="position: absolute;top: 327px;left: 975px;width: 200px;height: 50px;font-size: 17px">3</div>
+			<div style="position: absolute;top: 327px;left: 975px;width: 200px;height: 50px;font-size: 17px">4</div>
+			<div style="position: absolute;top: 327px;left: 975px;width: 200px;height: 50px;font-size: 17px">5</div>
+			 --><div class="scheduler" id="scheduler"></div>
+			<div class="col-sm-3 sidenav">
+				<div class = "tool_name">
+					<h2 style="font-size: 40px;text-align: center;">sched.ai</h2>
+				</div>
+				
+				<div class="policy">
+					<p>Policy:</p>
+					<div class="policy_select">
+					<select id="policy" class="selectpicker" width=200px>
+					  <option>Utilization</option>
+					  <option>User Experience</option>
+					</select>
+					</div>
+				</div>
+				<div class="start">
+				<button id="start" class="btn btn-success"><p style="font-size: 20px;">Start</p></button>
+				</div>
+				<div class="stop">
+				<button id="stop" class="btn btn-danger"><p style="font-size: 20px;">Stop</p></button>
+				</div>
+				<br>
+				
+				<div id="wrapper">
+					<div class="container" width="400px">
+						<div class="row bs-wizard" style="border-bottom:0;">
+							<div class="col-xs-3 bs-wizard-step disabled" id="st1">
+								<div class="text-center bs-wizard-stepnum">Job received</div>
+								<div class="progress"><div class="progress-bar"></div></div>
+								<a href="#" class="bs-wizard-dot"></a>
+								<div class="bs-wizard-info text-center"></div>
+							</div>
+
+							<div class="col-xs-3 bs-wizard-step disabled" id="st2"><!-- complete -->
+								<div class="text-center bs-wizard-stepnum">Classification</div>
+								<div class="progress"><div class="progress-bar"></div></div>
+								<a href="#" class="bs-wizard-dot"></a>
+								<div class="bs-wizard-info text-center"></div>
+							</div>
+
+							<div class="col-xs-3 bs-wizard-step disabled" id="st3"><!-- complete -->
+								<div class="text-center bs-wizard-stepnum">Scheduling</div>
+								<div class="progress"><div class="progress-bar"></div></div>
+								<a href="#" class="bs-wizard-dot"></a>
+								<div class="bs-wizard-info text-center"></div>
+							</div>
+
+							<div class="col-xs-3 bs-wizard-step disabled" id="st4"><!-- active -->
+								<div class="text-center bs-wizard-stepnum">Done</div>
+								<div class="progress"><div class="progress-bar"></div></div>
+								<a href="#" class="bs-wizard-dot"></a>
+								<div class="bs-wizard-info text-center"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div id="chartdiv"></div>	 -->
+	</div>
+
+	 
+</div>
+
+
+</body>
+</html>
