@@ -68,9 +68,13 @@ To run the code, run `python3 models/policy_eval.py`
     ```
 
 #### Heuristic Agents
-There are 2 heuristic policies avilable:
-1. Best Fit
-2. Worst Fit
+There are 6 heuristic policies avilable:
+1. Best Fit Peak
+2. Worst Fit Peak
+3. Tetris Packer
+4. Random
+5. Best fit current
+6. Worst fit current
 To run any of above, change the [policy](https://git.corp.adobe.com/AdobeResearchIndia/ai_systems_internship/blob/master/params.py#L28) in param file and run
     
 `python3 models/heuristic_agents.py`
